@@ -6,8 +6,7 @@ controller('loginController', function($scope, $http) {
        $http({
            method: 'POST',
            url: 'http://localhost:8080/authenticate',
-           data: JSON.stringify({ email: email, pass: password }),
-           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+           data: { "email": email, "pass": password }
        }).then(function successCallback(response) {
              alert("OK");
            }, function errorCallback(response) {
@@ -15,4 +14,3 @@ controller('loginController', function($scope, $http) {
            });
      }
 });
-

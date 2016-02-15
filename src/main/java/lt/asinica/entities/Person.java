@@ -6,22 +6,22 @@ import java.io.Serializable;
  * Created by p998dzz on 2016.02.15.
  */
 public class Person implements Serializable {
-    private int id;
-    private String name;
+    private String email;
+    private String pass;
 
-    public int getId() {
-        return id;
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getName() {
-        return name;
+    public String getPass() {
+        return pass;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 }
