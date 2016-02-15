@@ -25,7 +25,10 @@ public class PeanutsService {
 
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
     public @ResponseBody Person authenticate(@RequestBody final Person person) {
-        return new Person();
+        Person p = new Person();
+        p.setEmail("aaa");
+        p.setPass("fsdfsd");
+        return p;
     }
 
     @RequestMapping(value = "/peanuts/{name}", method = RequestMethod.PUT)
