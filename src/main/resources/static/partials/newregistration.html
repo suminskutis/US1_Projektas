@@ -20,18 +20,41 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="css/main.css">
 
+<form>
+    <h1>Registruokitės konsultacijai internetu</h1>
+    <div class = "field">Vardas*</div>
+    <input class="field" type="text">
+    <div class = "field">Pavardė*</div>
+    <input class="field" type="text">
+    <div class = "field">Telefonas susisiekti*</div>
+    <input class="field" type="text">
+    <div class = "field">El paštas*</div>
+    <input class="field"  type="text">
+    <div class="field"><label for="cars">Banko skyrius</label>
+        <select name="cars" id = "cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+    </div>
+    <div class = "date">Data</div>
+    <input class="field" type="date">
+    <div class="field"><label for="topic">Tema</label>
+        <select name="topic" id = "topic">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+    </div>
+    <div clas="field long">Pastabos, komentarai</div>
+    <textarea id="textField" cols="60" rows="10"></textarea>
+    <input class="btn btn-default" type="button" value="Siųsti">
 
-<div email="loginContainer" class="centered">
-    <h1>Registruokitės kosultacijai internetu</h1>
-    <h2>Vardas*</h2>
-    <h2>Pavardė*</h2>
-    <h2>Vardas*</h2>
-    <h2>El. paštas</h2>
-    <input class="form-control login-inputs" email="emailField" type="text">
-    <h2>Slaptažodis</h2>
-    <input class="form-control login-inputs" email="passwordField" type="password">
-    <input class="btn btn-default" type="button" value="Jungtis" ng-click="login()">
-    <input class="btn btn-default" type="button" value="Registruotis">
-</div>
+
+</form>
+
+
 </body>
 </html>
