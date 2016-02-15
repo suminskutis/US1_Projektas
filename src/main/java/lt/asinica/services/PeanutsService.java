@@ -2,10 +2,8 @@ package lt.asinica.services;
 
 import lt.asinica.beans.Peanut;
 import lt.asinica.beans.PeanutList;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import lt.asinica.entities.Person;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 
@@ -25,27 +23,26 @@ public class PeanutsService {
         peanutList.addPeanut(new Peanut("Antanas"));
     }
 
-    @RequestMapping("/peanuts")
-   public PeanutList list() {
+    @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
+    public @ResponseBody Person authenticate(@RequestBody final Person person) {
+        return new Person();
+    }
 
-       return peanutList;
-   }
-
-    @RequestMapping(value="/peanuts/{name}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/peanuts/{name}", method = RequestMethod.PUT)
     public void create(@PathVariable String name) {
         peanutList.addPeanut(new Peanut(name));
     }
 
-    @RequestMapping(value="/peanuts/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/peanuts/{id}", method = RequestMethod.GET)
     public void delete(@PathVariable Long id) {
         Peanut toRemove = null;
-        for(Peanut p : peanutList.getPeanuts()) {
-            if(p.getId() == id) {
+        for (Peanut p : peanutList.getPeanuts()) {
+            if (p.getId() == id) {
                 toRemove = p;
             }
         }
 
-        if(toRemove != null)
+        if (toRemove != null)
             peanutList.getPeanuts().remove(toRemove);
 
     }
